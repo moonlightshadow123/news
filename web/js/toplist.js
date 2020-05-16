@@ -83,12 +83,12 @@ genDiv(data){
 }
 
 $(function(){
-	var bili = new Toplist("../../json/bili.json", $("#biliContainer"));
-	var zhihu = new Toplist("../../json/zhihu.json", $("#zhihuContainer"));
-	var bili = new Toplist("../../json/baidu.json", $("#baiduContainer"));
-	var zhihu = new Toplist("../../json/weibo.json", $("#weiboContainer"));
-	var bili = new Toplist("../../json/tieba.json", $("#tiebaContainer"));
-	var zhihu = new Toplist("../../json/tianya.json", $("#tianyaContainer"));
+	var bili = new Toplist("http://localhost:8000/bili", $("#biliContainer"));
+	var zhihu = new Toplist("http://localhost:8000/zhihu", $("#zhihuContainer"));
+	var baidu = new Toplist("http://localhost:8000/baidu", $("#baiduContainer"));
+	var weibo = new Toplist("http://localhost:8000/weibo", $("#weiboContainer"));
+	var tieba = new Toplist("http://localhost:8000/tieba", $("#tiebaContainer"));
+	var tianya = new Toplist("http://localhost:8000/tianya", $("#tianyaContainer"));
 	//getData("../../json/bili.json", genDiv);
 	//$weiboContainer.height(window.innerHeight/2);
 });

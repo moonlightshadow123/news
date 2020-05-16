@@ -11,8 +11,8 @@ class NewsData:
 	def buildUrl(self, keyword, category):
 		url = self.url + "?apiKey=" + apiKey
 		if country != "": url += ("&country=" + country )
-		if keyword != "": url += ("&q=" + keyword)
-		if category != "": url += ("&category=" + category)
+		if keyword and keyword != "": url += ("&q=" + keyword)
+		if category and category != "": url += ("&category=" + category)
 		return url
 
 	def request(self, keyword="", category=""):
@@ -21,6 +21,7 @@ class NewsData:
 		# print(response.json())
 		with open(self.file_name, "w") as f:
 			json.dump(response.json(), f, indent=4)
+		return response.json()
 if __name__ == "__main__":
 	news = NewsData()
 	news.request()

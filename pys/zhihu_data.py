@@ -53,6 +53,7 @@ class ZhihuData:
 		jsonData = self.parse(data)
 		with open(self.file_name, "w") as f:
 			json.dump(jsonData, f, indent=4)
+		return jsonData
 
 if __name__ == "__main__":
 	zhihu = ZhihuData()

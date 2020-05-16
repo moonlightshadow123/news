@@ -57,6 +57,7 @@ class TianyaData:
         res_list = self.parse(r.text)        
         with open(self.file_name, "w") as f:
             json.dump(res_list, f, indent=4)
+        return res_list
 
 if __name__ == "__main__":
     tianya = TianyaData()

@@ -1,5 +1,5 @@
 var jsonData;
-var news_url = "../../json/news.json";
+var news_url = "http://127.0.0.1:8000/news";//"../../json/news.json";
 var $form = $("#form");
 var $newsContainer = $("#newsContainer");
 var $newsListContainer = $("#newsListContainer");
