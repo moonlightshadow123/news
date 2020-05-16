@@ -1,9 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>MyNews</title>
+	<link rel="icon" href="../img/logo.png">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/news.css">
+	<link rel="stylesheet" type="text/css" href="../css/toplist.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://kit.fontawesome.com/dea24a676b.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		#main{
+		    grid-gap: 10px;
+		    display: grid;
+		    grid-template-columns: 3fr 5fr;
+		}
+		#sub{
+			grid-gap: 10px;
+		    display: grid;
+		    grid-template-columns: repeat(3,1fr);
+		}
+	</style>
 </head>
 <body>
+<id id="main">
+	<div id="newsContainer" class="container">
+		<div style="padding: 20px; box-shadow: 0 2px 8px -2px gray;">
+		<form id="form">
+			<label style="margin-right: 20px;border: 1px solid black; color:#ffffff; background-color: #000000"><strong>News API</strong></label>
+			<label style="padding: 10px"><i class="fas fa-search"></i></label>
+			<input type="text" name="keyword" style="width: 100px; border: 1px solid #d3d3d3;">
+			<label style="padding: 10px"><i class="far fa-folder"></i></label>
+			<select name="category" style="border: 1px solid #d3d3d3;">
+			  <option class="active" value="volvo">Volvo</option>
+			  <option class="active" value="saab">Saab</option>
+			  <option class="active" value="fiat">Fiat</option>
+			  <option class="active" value="audi">Audi</option>
+			</select>
+			<label style="padding: 10px"></label>
+			<button id="querybtn" style="box-shadow: 0 2px 8px -2px gray; float: right"><i class="fas fa-sync-alt"></i></button>
+		</form>
+	</div>
+	<div id="newsListContainer" class="thecontainer">
+		<section id="sect_template" class="info" style="margin-top: 5px;">
+			<div class="img" style="height: 100%;text-align: center;display:flex; align-items:center;">
+				<img src="" width="100%">
+			</div>
+			<div class="meta" style="height: 100%;text-align: center;display:flex; align-items:center;">
+  				<div style="text-align: left;">
+					<h2></h2>
+					<span class="date" style="font-size: small;color:gray;"><i class="fas fa-calendar-alt"></i>&nbsp;</span>
+					<p style="font-size: small;color: gray;"><i class="far fa-bookmark"></i>&nbsp;<span class="description"></span></p>
+					
+				</div>
+			</div>
+			<div class="content" style="grid-column: 1/3;">
+				<p style="margin: 5px" class="content"></p>
+				<button class="url" style="box-shadow: 0 2px 8px -2px gray;">More</button>
+			</div>
+		</section>
+	</div>
+	</div>
+	<div id="sub">
+		<div id="weiboContainer" class="container">weibo</div>
+		<div id="baiduContainer" class="container">baidu</div>
+		<div id="biliContainer" class="container">bili</div>
+		<div id="zhihuContainer" class="container">zhihu</div>
+		<div id="tiebaContainer" class="container">tieba</div>
+		<div id="tianyaContainer" class="container">tianya</div>
+	</div>
+</div>
 
+<script type="text/javascript" src="../js/news.js"></script>
+<script type="text/javascript" src="../js/toplist.js"></script>
+<script type="text/javascript">
+	
+</script>
 </body>
 </html>

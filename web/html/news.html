@@ -2,30 +2,33 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link rel="stylesheet" type="text/css" href="../css/news.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
 	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://kit.fontawesome.com/dea24a676b.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="newsContainer">
-	<div id="form" style="padding: 20px;margin-bottom: 20px; box-shadow: 0 2px 8px -2px gray;">
-		<form>
-			<img src="../img/news.png" height="30">
-			<label style="padding: 10px">Key Word</label>
-			<input type="text" name="" style="box-shadow: 0 2px 8px -2px">
-			<label style="padding: 10px">Category</label>
-			<select id="cars" name="cars" style="box-shadow: 0 2px 8px -2px">
+	<div style="padding: 20px;margin-bottom: 20px; box-shadow: 0 2px 8px -2px gray;">
+		<form id="form">
+			<img style="vertical-align:middle" src="../img/news.png" height="30">
+			<label style="margin-right: 20px"><strong>News API</strong></label>
+			<label style="padding: 10px">Key Word:</label>
+			<input type="text" name="keyword" style="box-shadow: 0 2px 8px -2px">
+			<label style="padding: 10px">Category:</label>
+			<select name="category" style="box-shadow: 0 2px 8px -2px">
 			  <option class="active" value="volvo">Volvo</option>
 			  <option class="active" value="saab">Saab</option>
 			  <option class="active" value="fiat">Fiat</option>
 			  <option class="active" value="audi">Audi</option>
 			</select>
 			<label style="padding: 10px"></label>
-			<button style="box-shadow: 0 2px 8px -2px gray; float: right">Query</button>
+			<button id="querybtn" style="box-shadow: 0 2px 8px -2px gray; float: right">Query</button>
 		</form>
 	</div>
-	<div id="newsContainer">
+	<div id="newsListContainer" class="thecontainer">
 		<section id="sect_template" class="info">
 			<div class="img" style="height: 100%;text-align: center;display:flex; align-items:center;">
 				<img src="" width="100%">
@@ -33,10 +36,14 @@
 			<div class="meta" style="height: 100%;text-align: center;display:flex; align-items:center;">
   				<div style="text-align: left;">
 					<h2></h2>
+					<span class="date" style="font-size: small;color:gray;"><i class="fas fa-calendar-alt"></i>&nbsp;</span>
 					<p class="description" style="font-size: small;color: gray;"></p>
-					<p class="content"></p>
-					<button class="url" style="box-shadow: 0 2px 8px -2px gray;">More</button>
+					
 				</div>
+			</div>
+			<div class="content" style="grid-column: 1/3;">
+				<p style="margin: 5px" class="content"></p>
+				<button class="url" style="box-shadow: 0 2px 8px -2px gray;">More</button>
 			</div>
 		</section>
 	</div>

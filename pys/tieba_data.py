@@ -6,8 +6,8 @@ import time
 import requests
 from lxml import etree
 from utils import nowStr
-bgcolor = "#d3e0f3"
-logo_url = "tieba.png"
+bgcolor = "#ff66b3"
+logo_url = "../img/tieba.png"
 url = "http://tieba.baidu.com/hottopic/browse/topicList"
 headers = {
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
@@ -37,7 +37,7 @@ class TiebaData:
     def parse(self, data):
         # print(text)
         topic_list = findKey(findKey(data, "bang_topic"), "topic_list")
-        print(topic_list)
+        # print(topic_list)
 
         res_list = []
         num = 0

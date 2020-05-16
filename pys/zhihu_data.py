@@ -4,8 +4,8 @@ import re, json
 from bs4 import BeautifulSoup
 
 from utils import nowStr
-bgcolor = "#d3e0f3"
-logo_url = "zhihu.svg"
+bgcolor = "#00e6ac"
+logo_url = "../img/zhihu.svg"
 zh_url = "https://www.zhihu.com/billboard"
 
 def findKey(data, thekey):
@@ -49,7 +49,7 @@ class ZhihuData:
 		# print(soup.find("script",id="js-initialData"))
 		script_text = soup.find("script",id="js-initialData").encode_contents()
 		data = json.loads(script_text)
-		print(data)
+		# print(data)
 		jsonData = self.parse(data)
 		with open(self.file_name, "w") as f:
 			json.dump(jsonData, f, indent=4)

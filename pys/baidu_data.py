@@ -5,8 +5,8 @@ from datetime import datetime
 import json
 import os
 from utils import nowStr
-bgcolor = "#d3e0f3"
-logo_url = "baidu.svg"
+bgcolor = "#4d79ff"
+logo_url = "../img/baidu.svg"
 url = "http://top.baidu.com/buzz?b=1"
 headers = {
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",

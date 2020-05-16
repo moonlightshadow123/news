@@ -7,8 +7,8 @@ import requests
 from lxml import etree
 
 from utils import nowStr
-bgcolor = "#d3e0f3"
-logo_url = "tianya.jpg"
+bgcolor = "#66cc00"
+logo_url = "../img/tianya.jpg"
 url = "https://bbs.tianya.cn/m/hotArticle.jsp"
 headers={
     'Host': 's.weibo.com',

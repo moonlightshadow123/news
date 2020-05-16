@@ -1,7 +1,10 @@
-var data;
-var $container = $("#container");
+var jsonData;
+var news_url = "../../json/news.json";
+var $form = $("#form");
 var $newsContainer = $("#newsContainer");
-var $sect_template = $("#sect_template");
+var $newsListContainer = $("#newsListContainer");
+var $sect_template = $("#sect_template").clone().attr("id", "");
+var simpleBar;
 //$("select").selectmenu().selectmenu( "menuWidget" ).addClass("active");
 
 function openUrl(url){
@@ -16,16 +19,10 @@ function openUrl(url){
 }
 
 function getData(url){
-	$.getJSON(url, function(jsonData){
-		data = jsonData["articles"];
-		data.forEach(function(article, idx){
-			var $sect = genSect(article);
-			$container.append($sect);
-		});
-		$sect_template.remove();
-		$sect_template.height(window.innerHeight/2);
-		const simpleBar = new SimpleBar(document.getElementById('sect_template'));
-		simpleBar.recalculate();
+	console.log("getData!");
+	$.getJSON(url, function(data){
+		jsonData = data;
+		genSect(data["articles"]);
 		$("button.url").click(function(){
 			openUrl($(this).attr("data-url"));
 		});
@@ -33,20 +30,50 @@ function getData(url){
 }
 
 function genSect(data){
-	var title = data["title"];
-	var description = data["description"];
-	var urlToImg = data["urlToImage"];
-	var content = data["content"];
-	var url = data["url"];
-	$sect = $sect_template.clone();
-	$sect.find('img').attr("src", urlToImg)
-	$sect.find("h2").text(title);
-	$sect.find("p.description").text(description);
-	$sect.find("p.content").text(content);
-	$sect.find("button.url").attr("data-url", url);
-	return $sect;
+	var container;
+	if(!simpleBar){
+		container = $newsListContainer;
+	}else{
+		container = $newsListContainer.find("simplebar-content");
+	}
+	container.children().remove();
+	data.forEach(function(article, idx){
+		var title = article["title"];
+		var description = article["description"];
+		var urlToImg = article["urlToImage"];
+		var content = article["content"];
+		var date = article["publishedAt"];
+		var url = article["url"];
+		var $sect = $sect_template.clone();
+		$sect.find('img').attr("src", urlToImg)
+		$sect.find("h2").text(title);
+		$sect.find('span.date').append( date);
+		$sect.find("span.description").text(description);
+		if(content)
+			$sect.find("p.content").text(content);
+		else
+			$sect.find("p.content").remove();
+		$sect.find("button.url").attr("data-url", url);
+		container.append($sect);
+	//return $sect;
+	});
+	$newsListContainer.height(window.innerHeight-100);
+	if(!simpleBar){
+		simpleBar = new SimpleBar($newsListContainer[0]);
+		simpleBar.recalculate();
+	}
+}
+
+function submitform(e){
+	console.log("submit!");
+	var category = $form.find('input[name="category"]').val();
+	var keyword = $form.find('input[name="keyword"]').val();
+	var url = news_url + "?keyword=" + keyword + "&category=" + category;
+	getData(news_url);
+	return false;
 }
 
 $(function(){
-	getData('../../json/news.json');
+	$form.on("submit", submitform);
+	getData(news_url);
 });

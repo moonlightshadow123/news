@@ -1,11 +1,4 @@
-.info{
-    box-shadow: 0 2px 8px -2px gray;
-    grid-gap: 10px;
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    padding: 1rem;
-    margin-bottom: 10px;
-}
+
 .shadow{
 	padding: 10px;
 	cursor: pointer;
@@ -14,14 +7,6 @@
 	box-shadow: 0 2px 8px -2px gray;
 	color:#ffffff;
 }
-a{
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
-}
-/*
-a:hover{
-	color:#1010E3;
-}*/
 .col-1{
 	grid-column: 1/1;
 	vertical-align: top;
@@ -38,32 +23,8 @@ a:hover{
 	vertical-align: top;
 	text-align: right;
 }
-.thecontainer{
-	border-top: 1px solid #e3e3e3;
-	border-bottom: 1px solid #e3e3e3;
-	padding: 4px;
-}
-input, select, button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-	padding: 10px;
-}
-button:hover{
-	background-color: #1010E3;
-	color: #ffffff;
-}
-select:hover{
-	background-color: #1010E3;
-	color: #ffffff;
-}
 .grid{
 	display: grid;
-  grid-template-columns: 40px auto 100px;
-  font-size: small;
-  
+  	grid-template-columns: 40px auto 100px;
+  	font-size: small;
 }

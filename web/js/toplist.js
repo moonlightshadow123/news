@@ -35,8 +35,11 @@ getData(){
 		console.log(jsonData);
 		this.data = jsonData;
 		this.$logoimg.attr("src", this.data["logo"]);
-		this.$datespan.text("updated at: "+this.data["date"]);
+		this.$datespan.text(this.data["date"]);
 		this.color = this.data["color"];
+		var color = this.data["color"];
+		this.$updatebtn.mouseover(function(){$(this).css("background-color", color)});
+		this.$updatebtn.mouseleave(function(){$(this).css("background-color", "")});
 		this.genDiv( this.data["list"]);
 	}.bind(this));
 }
@@ -54,12 +57,16 @@ genDiv(data){
 		var score = ele["score"];
 		var $snum = $('<div class="col-1">').append($('<span style="font-weight:700">').text(num));
 		var $a = $('<div class="col-8">').append($('<a target="_blank">').text(title).attr("href", url));
-		var $sspan = $('<div class="col-3">').append($('<span clas="col-3" >').text(score));
+		var $sspan;
+		if(score)
+		$sspan = $('<div class="col-3">').append($('<span>').append($('<i class="fas fa-fire-alt">')),$('<span>').text(" "+score));
+		else
+		$sspan = $("");
 		var $div = $('<div class="shadow grid">').append($snum, $a, $sspan);
 		container.append($div);
 	}.bind(this));
 	// Height and Simple bar
-	this.$listContainer.height(window.innerHeight/2);
+	this.$listContainer.height(window.innerHeight/2-100);
 	if(!this.simpleBar){
 		this.simpleBar = new SimpleBar(this.$listContainer[0]);
 		this.simpleBar.recalculate();
@@ -78,6 +85,10 @@ genDiv(data){
 $(function(){
 	var bili = new Toplist("../../json/bili.json", $("#biliContainer"));
 	var zhihu = new Toplist("../../json/zhihu.json", $("#zhihuContainer"));
+	var bili = new Toplist("../../json/baidu.json", $("#baiduContainer"));
+	var zhihu = new Toplist("../../json/weibo.json", $("#weiboContainer"));
+	var bili = new Toplist("../../json/tieba.json", $("#tiebaContainer"));
+	var zhihu = new Toplist("../../json/tianya.json", $("#tianyaContainer"));
 	//getData("../../json/bili.json", genDiv);
 	//$weiboContainer.height(window.innerHeight/2);
 });

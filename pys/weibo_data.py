@@ -7,8 +7,8 @@ import requests
 from lxml import etree
 
 from utils import nowStr
-bgcolor = "#d3e0f3"
-logo_url = "sina.svg"
+bgcolor = "#ffad33"
+logo_url = "../img/sina.svg"
 url = "https://s.weibo.com/top/summary?cate=realtimehot"
 host = "https://s.weibo.com"
 headers={
@@ -38,8 +38,8 @@ class WeiboData:
             hot_score = tr.xpath('./td[2]/span/text()')
             url = host + tr.xpath('./td[2]/a')[0].get("href")
             tag = tr.xpath('./td[3]/i/text()')
-            print(url)
-            if len(tag) != 0: print(tag[0])
+            # print(url)
+            # if len(tag) != 0: print(tag[0])
 
             # 过滤第 0 条
             if num == 0:

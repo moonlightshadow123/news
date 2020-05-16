@@ -18,7 +18,7 @@ class NewsData:
 	def request(self, keyword="", category=""):
 		url = self.buildUrl(keyword, category)
 		response = requests.get(url)
-		print(response.json())
+		# print(response.json())
 		with open(self.file_name, "w") as f:
 			json.dump(response.json(), f, indent=4)
 if __name__ == "__main__":

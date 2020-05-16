@@ -8,8 +8,8 @@ from lxml import etree
 from utils import nowStr
 
 from utils import nowStr
-bgcolor = "#d3e0f3"
-logo_url = "bibili.png"
+bgcolor = "#cc9966"
+logo_url = "../img/bilibili.png"
 url = "https://www.bilibili.com/ranking"
 
 class BiliData:
