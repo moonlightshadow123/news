@@ -81,14 +81,15 @@ genDiv(data){
 	});
 }
 }
+var origin = window.location.origin;
 
 $(function(){
-	var bili = new Toplist("http://localhost:8000/bili", $("#biliContainer"));
-	var zhihu = new Toplist("http://localhost:8000/zhihu", $("#zhihuContainer"));
-	var baidu = new Toplist("http://localhost:8000/baidu", $("#baiduContainer"));
-	var weibo = new Toplist("http://localhost:8000/weibo", $("#weiboContainer"));
-	var tieba = new Toplist("http://localhost:8000/tieba", $("#tiebaContainer"));
-	var tianya = new Toplist("http://localhost:8000/tianya", $("#tianyaContainer"));
+	var bili = new Toplist(origin+"/bili", $("#biliContainer"));
+	var zhihu = new Toplist(origin+"/zhihu", $("#zhihuContainer"));
+	var baidu = new Toplist(origin+"/baidu", $("#baiduContainer"));
+	var weibo = new Toplist(origin+"/weibo", $("#weiboContainer"));
+	var tieba = new Toplist(origin+"/tieba", $("#tiebaContainer"));
+	var tianya = new Toplist(origin+"/tianya", $("#tianyaContainer"));
 	//getData("../../json/bili.json", genDiv);
 	//$weiboContainer.height(window.innerHeight/2);
 });

@@ -1,5 +1,6 @@
 var jsonData;
-var news_url = "http://127.0.0.1:8000/news";//"../../json/news.json";
+var origin = window.location.origin;
+var news_url = origin + "/news";//"../../json/news.json";
 var $form = $("#form");
 var $newsContainer = $("#newsContainer");
 var $newsListContainer = $("#newsListContainer");
@@ -34,7 +35,7 @@ function genSect(data){
 	if(!simpleBar){
 		container = $newsListContainer;
 	}else{
-		container = $newsListContainer.find("simplebar-content");
+		container = $newsListContainer.find(".simplebar-content");
 	}
 	container.children().remove();
 	data.forEach(function(article, idx){
@@ -66,10 +67,10 @@ function genSect(data){
 
 function submitform(e){
 	console.log("submit!");
-	var category = $form.find('input[name="category"]').val();
+	var category = $form.find('select[name="category"]').val();
 	var keyword = $form.find('input[name="keyword"]').val();
 	var url = news_url + "?keyword=" + keyword + "&category=" + category;
-	getData(news_url);
+	getData(url);
 	return false;
 }
 

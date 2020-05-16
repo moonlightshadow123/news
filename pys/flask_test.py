@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from baidu_data import BaiduData
 from bili_data 	import BiliData
 from news_data	import NewsData
@@ -17,8 +17,8 @@ class DataManager:
 		self.tieba = TiebaData()
 		self.zhihu = ZhihuData()
 
-app = Flask(__name__)
-dm = DataManager()    
+app = Flask(__name__, static_url_path='', static_folder="../web")
+dm = DataManager()   
 
 @app.route('/test')
 def test():
@@ -31,8 +31,10 @@ def test():
 
 @app.route('/news')
 def news():
-    keyword = request.args.get('keyword')
-    category = request.args.get('category')
+    keyword = request.args.get('keyword', default='', type=str)
+    category = request.args.get('category', default='', type=str)
+    print(keyword)
+    print(category)
     data = dm.news.request(keyword=keyword, category=category)
     return jsonify(data)
 
