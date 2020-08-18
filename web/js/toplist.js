@@ -36,13 +36,8 @@ getData(){
 		this.$datespan.text(this.data["date"]);
 		this.color = this.data["color"];
 		var color = this.data["color"];
-		this.$updatebtn.hover(function(){
-			$(this).css("background-color", color);	
-		});
-		/*
 		this.$updatebtn.mouseover(function(){$(this).css("background-color", color)});
 		this.$updatebtn.mouseleave(function(){$(this).css("background-color", "")});
-		*/
 		this.genDiv( this.data["list"]);
 	}.bind(this));
 }
@@ -76,9 +71,20 @@ genDiv(data){
 	}
 	var color = this.color;
 	console.log(color);
-	container.find(".shadow").hover(function(){
-		$(this).css("font-weight", "700").css("background-color", color);
-	});
+
+	var className = this.$container.attr("id")+"_class";
+	container.find(".shadow").addClass(className);
+
+	var css = className + ':hover{ background-color:' + color + '; font-weight:700}';
+	var style = document.createElement('style');
+
+	if (style.styleSheet) {
+	    style.styleSheet.cssText = css;
+	} else {
+	    style.appendChild(document.createTextNode(css));
+	}
+
+	document.getElementsByTagName('head')[0].appendChild(style);
 	/*
 	container.find(".shadow").mouseover( function(){
 		$(this).css("font-weight", "700").css("background-color", color);
