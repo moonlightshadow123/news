@@ -75,7 +75,7 @@ genDiv(data){
 	var className = this.$container.attr("id")+"_class";
 	container.find(".shadow").addClass(className);
 
-	var css = className + ':hover{ background-color:' + color + '; font-weight:700}';
+	var css = '.' + className + ':hover{ background-color:' + color + '; font-weight:700}';
 	var style = document.createElement('style');
 
 	if (style.styleSheet) {
