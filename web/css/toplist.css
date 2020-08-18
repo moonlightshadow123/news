@@ -33,6 +33,6 @@
 	.grid{
 		display: grid;
 	  	grid-template-columns: 80px auto 200px;
-	  	font-size: medium;
+	  	font-size: 200%;
 	}
 }
