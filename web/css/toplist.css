@@ -33,5 +33,6 @@
 	.grid{
 		display: grid;
 	  	grid-template-columns: 40px auto 100px;
+	  	font-size: normal;
 	}
 }
