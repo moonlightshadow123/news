@@ -72,26 +72,18 @@ genDiv(data){
 	var color = this.color;
 	console.log(color);
 
+	// Append a style element to the top of html
 	var className = this.$container.attr("id")+"_class";
 	container.find(".shadow").addClass(className);
 
 	var css = '.' + className + ':hover{ background-color:' + color + '; font-weight:700}';
 	var style = document.createElement('style');
-
 	if (style.styleSheet) {
 	    style.styleSheet.cssText = css;
 	} else {
 	    style.appendChild(document.createTextNode(css));
 	}
-
 	document.getElementsByTagName('head')[0].appendChild(style);
-	/*
-	container.find(".shadow").mouseover( function(){
-		$(this).css("font-weight", "700").css("background-color", color);
-	});
-	container.find(".shadow").mouseleave( function(){
-		$(this).css("font-weight", "").css("background-color", "");;
-	});*/
 }
 }
 //var origin = "http://3.136.211.6:9000/";
