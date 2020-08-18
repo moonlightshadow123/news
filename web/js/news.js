@@ -1,5 +1,6 @@
 var jsonData;
 var origin = window.location.origin;
+//var origin = "http://3.136.211.6:9000";
 var news_url = origin + "/news";//"../../json/news.json";
 var $form = $("#form");
 var $newsContainer = $("#newsContainer");

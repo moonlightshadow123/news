@@ -21,6 +21,18 @@
 		    display: grid;
 		    grid-template-columns: repeat(3,1fr);
 		}
+		@media (max-width:1200px) {
+			#main{
+			    grid-gap: 10px;
+			    display: grid;
+			    grid-template-columns: 1fr;
+			}
+			#sub{
+				grid-gap: 10px;
+			    display: grid;
+			    grid-template-columns: 1fr;
+			}
+		}
 	</style>
 </head>
 <body>

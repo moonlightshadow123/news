@@ -81,6 +81,7 @@ genDiv(data){
 	});
 }
 }
+//var origin = "http://3.136.211.6:9000/";
 var origin = window.location.origin;
 
 $(function(){
