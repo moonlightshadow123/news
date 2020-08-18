@@ -36,8 +36,13 @@ getData(){
 		this.$datespan.text(this.data["date"]);
 		this.color = this.data["color"];
 		var color = this.data["color"];
+		this.$updatebtn.hover(function(){
+			$(this).css("background-color", color);	
+		});
+		/*
 		this.$updatebtn.mouseover(function(){$(this).css("background-color", color)});
 		this.$updatebtn.mouseleave(function(){$(this).css("background-color", "")});
+		*/
 		this.genDiv( this.data["list"]);
 	}.bind(this));
 }
@@ -71,12 +76,16 @@ genDiv(data){
 	}
 	var color = this.color;
 	console.log(color);
+	container.find(".shadow").hover(function(){
+		$(this).css("font-weight", "700").css("background-color", color);
+	});
+	/*
 	container.find(".shadow").mouseover( function(){
 		$(this).css("font-weight", "700").css("background-color", color);
 	});
 	container.find(".shadow").mouseleave( function(){
 		$(this).css("font-weight", "").css("background-color", "");;
-	});
+	});*/
 }
 }
 //var origin = "http://3.136.211.6:9000/";
