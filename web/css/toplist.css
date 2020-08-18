@@ -26,8 +26,13 @@
 .grid{
 	display: grid;
   	grid-template-columns: 40px auto 100px;
-  	font-size: normal;
+  	font-size: small;
 }
 
 @media(max-width:1200px){
+	.grid{
+		display: grid;
+	  	grid-template-columns: 80px auto 200px;
+	  	font-size: normal;
+	}
 }
