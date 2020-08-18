@@ -1,14 +1,12 @@
 var html_url = "../html/template.html";
 class Toplist{
-	json_url;
-	data;
-	color;
-	$container;
-	$listContainer;
-	$logoimg;
-	$datespan
-	$updatebtn;
 	constructor(json_url, $container){
+		this.data;
+		this.color;
+		this.$listContainer;
+		this.$logoimg;
+		this.$datespan
+		this.$updatebtn;
 		this.json_url = json_url;
 		this.$container = $container;
 		this.$container.load(html_url, function(){
