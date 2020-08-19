@@ -29,6 +29,13 @@
   	font-size: small;
 }
 
+.listHeader span{
+	font-size: small;
+	color:gray;
+	vertical-align: middle;
+	margin: 20px;
+}
+
 @media(max-width:1200px){
 	.grid{
 		display: grid;
@@ -36,7 +43,7 @@
 	  	font-size: inherit;
 	}
 	.listHeader img{
-		height: 60;
+		height: 60px;
 	}
 	.listHeader span{
 		font-size: inherit;
