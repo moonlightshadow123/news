@@ -35,4 +35,13 @@
 	  	grid-template-columns: 80px auto 200px;
 	  	font-size: inherit;
 	}
+	.listHeader img{
+		height: 60;
+	}
+	.listHeader span{
+		font-size: inherit;
+	}
+	.listHeader button{
+		font-size: inherit;
+	}
 }
